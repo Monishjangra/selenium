@@ -1,9 +1,12 @@
 package formType;
 
+import listeners.MyListener;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import tests.Common;
 
 @Test
+@Listeners(MyListener.class)
 public class InputTest extends Common {
 
 //    public InputTest() {

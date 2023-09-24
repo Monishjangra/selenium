@@ -1,10 +1,13 @@
 package formType;
 
+import listeners.MyListener;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import tests.Common;
 
 @Test
+@Listeners(MyListener.class)
 public class ButtonTest extends Common {
 
     @Test(priority = 1)
