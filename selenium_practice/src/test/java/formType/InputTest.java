@@ -1,26 +1,19 @@
 package formType;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import tests.Common;
 
-public class InputTest extends CommonTest {
+@Test
+public class InputTest extends Common {
 
-    public InputTest() {
-        super();
-    }
+//    public InputTest() {
+//        super();
+//    }
 
     @Test(priority = 1)
     public void inputName() throws InterruptedException {
-        driver.findElement(By.id("name")).sendKeys(prop.getProperty("inputName"));
+        homePage.input(prop.getProperty("inputName"), prop.getProperty("inputEmail"), prop.getProperty("inputPhone"));
+        Thread.sleep(2000);
     }
 
-    @Test(priority = 2)
-    public void inputEmail() {
-        driver.findElement(By.id("email")).sendKeys(prop.getProperty("inputEmail"));
-    }
-
-    @Test(priority = 3)
-    public void inputPhone() {
-        driver.findElement(By.id("phone")).sendKeys(prop.getProperty("inputPhone"));
-    }
 }

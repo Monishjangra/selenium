@@ -1,28 +1,29 @@
 package formType;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import tests.Common;
 
-public class ButtonTest extends CommonTest {
+@Test
+public class ButtonTest extends Common {
 
     @Test(priority = 1)
     public void radio() throws InterruptedException {
-        driver.findElement(By.xpath("//*[@id='male']")).click();
-        driver.findElement(By.xpath("//*[@id='female']")).click();
+        homePage.male();
+        homePage.feMale();
         Thread.sleep(2000);
     }
 
     @Test(priority = 2)
     public void checkBox() throws InterruptedException {
-        driver.findElement(By.xpath("//*[@id=\"sunday\"]")).click();
-        driver.findElement(By.xpath("//*[@id=\"monday\"]")).click();
+        homePage.sunday();
+        homePage.monday();
         Thread.sleep(2000);
     }
 
     @Test(priority = 3, dataProvider="dataSupplier")
     public void dropdown(String data) throws InterruptedException {
-        driver.findElement(By.xpath("//*[@id=\"country\"]")).findElement(By.xpath(data)).click();
+        homePage.dropDown(data);
         Thread.sleep(2000);
     }
 
