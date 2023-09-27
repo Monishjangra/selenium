@@ -34,5 +34,10 @@ public class ButtonTest extends Common {
     public Object[][] dataSupplier(){
         return new Object[][]{{"//*[@id=\"country\"]/option[5]"}, {"//*[@id=\"country\"]/option[8]"},{"//*[@id=\"country\"]/option[6]"}};
     }
+    
+    @Test(priority = 4)
+    public void select() {
+    	homePage.select();
+    }
 
 }

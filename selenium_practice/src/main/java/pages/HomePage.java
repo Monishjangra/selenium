@@ -33,6 +33,12 @@ public class HomePage {
 
     @FindBy(id = "phone")
     private WebElement phone;
+    
+    @FindBy(id = "colors")
+    private WebElement select;
+    
+    @FindBy(xpath = "//p[text() = 'Date: ']/input[@id= 'datepicker']")
+    private WebElement dateData;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -63,6 +69,16 @@ public class HomePage {
         name.sendKeys(inputName);
         email.sendKeys(inputEmail);
         phone.sendKeys(inputPhone);
+    select();
     }
+    
+    public void select() {
+    	select.findElement(By.xpath("//option[text()='Red']")).click();    	
+    }
+
+	public void date(String date) {
+		dateData.sendKeys(date);
+		
+	}
 
 }

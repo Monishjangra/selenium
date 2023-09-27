@@ -1,6 +1,7 @@
 package formType;
 
 import listeners.MyListener;
+
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import tests.Common;
@@ -19,4 +20,9 @@ public class InputTest extends Common {
         Thread.sleep(2000);
     }
 
+    @Test(priority = 2)
+    public void date() throws InterruptedException {
+    	homePage.date(prop.getProperty("date"));	
+    	Thread.sleep(2000);
+	}
 }
