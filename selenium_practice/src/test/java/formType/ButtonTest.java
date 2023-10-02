@@ -3,6 +3,7 @@ package formType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -51,15 +52,16 @@ public class ButtonTest extends Common {
 		Thread.sleep(2000);
 	}
 	
-//	@Test(priority = 6)
-//	public void doubleClick() throws InterruptedException {
-//		WebElement field = driver.findElement(By.id("field1"));
-//		field.clear();
-//		field.sendKeys("Monish");
-//		WebElement dblclick = driver.findElement(By.xpath("//button[text()='Copy Text']"));
-//		Actions actions = new Actions(driver);
-//		actions.doubleClick(dblclick).build().perform();
-//		System.out.println(driver.findElement(By.xpath("//input[@id = 'field2']")).getText());
-//	}
+	@Test(priority = 6)
+	public void doubleClick() throws InterruptedException {
+		WebElement field = driver.findElement(By.id("field1"));
+		field.clear();
+		field.sendKeys("Monish");
+		WebElement dblclick = driver.findElement(By.xpath("//button[text()='Copy Text']"));
+		Actions actions = new Actions(driver);
+		actions.doubleClick(dblclick).build().perform();
+		Thread.sleep(2000);
+		Assert.assertEquals(driver.findElement(By.id("field2")).getAttribute("value"), "Monish");
+	}
 
 }
