@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,32 +12,29 @@ public class HomePage {
 
     WebDriver driver;
 
-    @FindBy(xpath = "//*[@id='male']")
+    @FindBy(xpath = "//label[@for='male']//preceding::input[@id='male']")
     private WebElement maleRadio;
 
-    @FindBy(xpath = "//*[@id='female']")
+    @FindBy(xpath = "//label[@for='female']//preceding::input[@id='female']")
     private WebElement femaleRadio;
 
-    @FindBy(xpath = "//*[@id=\"sunday\"]")
+    @FindBy(xpath = "//label[@for='sunday']//preceding::input[@id='sunday']")
     private WebElement sundayCheckBox;
 
-    @FindBy(xpath = "//*[@id=\"monday\"]")
+    @FindBy(xpath = "//label[@for='monday']//preceding::input[@id='monday']")
     private WebElement mondayCheckBox;
 
-    @FindBy(xpath = "//*[@id=\"country\"]")
+    @FindBy(xpath = "//label[@for='country']//following-sibling::select[@id='country']")
     private WebElement dropdown;
 
-    @FindBy(id = "name")
+    @FindBy(xpath = "//label[text()= 'Name:']//following::input[@id = 'name']")
     private WebElement name;
 
-    @FindBy(id = "email")
+    @FindBy(xpath = "//label[text()= 'Email:']//following::input[@id = 'email']")
     private WebElement email;
 
-    @FindBy(id = "phone")
+    @FindBy(xpath = "//label[text()= 'Phone:']//following::input[@id = 'phone']")
     private WebElement phone;
-    
-    @FindBy(id = "colors")
-    private WebElement select;
     
     @FindBy(xpath = "//p[text() = 'Date: ']/input[@id= 'datepicker']")
     private WebElement dateData;
@@ -69,11 +68,15 @@ public class HomePage {
         name.sendKeys(inputName);
         email.sendKeys(inputEmail);
         phone.sendKeys(inputPhone);
-    select();
     }
     
     public void select() {
-    	select.findElement(By.xpath("//option[text()='Red']")).click();    	
+    List<WebElement> options = driver.findElements(By.xpath("//label[@for='colors']//following::select//child::option"));
+    for(WebElement option : options) {
+    	if(option.getText().equalsIgnoreCase("red")) {
+    		option.click();
+    	}
+    }
     }
 
 	public void date(String date) {

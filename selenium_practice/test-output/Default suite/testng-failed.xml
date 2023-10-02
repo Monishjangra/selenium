@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="formType.ButtonTest">
+      <class name="formType.InputTest">
         <methods>
           <include name="terminate"/>
-          <include name="select"/>
           <include name="onStart"/>
+          <include name="resizable"/>
         </methods>
-      </class> <!-- formType.ButtonTest -->
+      </class> <!-- formType.InputTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
