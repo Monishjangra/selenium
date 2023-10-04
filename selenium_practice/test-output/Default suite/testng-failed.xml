@@ -7,7 +7,7 @@
         <methods>
           <include name="terminate"/>
           <include name="onStart"/>
-          <include name="resizable"/>
+          <include name="date"/>
         </methods>
       </class> <!-- formType.InputTest -->
     </classes>

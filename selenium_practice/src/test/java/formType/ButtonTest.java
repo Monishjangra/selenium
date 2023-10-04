@@ -42,8 +42,9 @@ public class ButtonTest extends Common {
 	}
 
 	@Test(priority = 4)
-	public void select() {
+	public void select() throws InterruptedException {
 		homePage.select();
+		Thread.sleep(2000);
 	}
 	
 	@Test(priority = 5)

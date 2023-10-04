@@ -4,6 +4,8 @@
   <test thread-count="5" name="Test1">
     <classes>
       <class name="formType.ButtonTest"/>
+      <class name="formType.AletTest"/>
+      <class name="formType.TableTest"/>
       <class name="formType.LoginTest"/>
       <class name="formType.InputTest"/>
     </classes>
