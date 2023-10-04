@@ -103,6 +103,10 @@ public class BasicTest {
 		WebElement button = driver.findElement(null);
 		js.executeScript("arguments[0].click();", button);
 		
+ 		
+//		Scroll down the webpage by 5000 pixels  
+        js.executeScript("scrollBy(0, 5000)");   
+        
 //		page loading strategy
 		ChromeOptions options = new ChromeOptions();
 		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
@@ -155,7 +159,6 @@ public class BasicTest {
 				option2.click();
 			}
 		}
- 		
 
 	}
 
